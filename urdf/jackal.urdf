@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="jackal">
+  <joint name="front_left_wheel_joint" type="continuous">
+    <origin xyz="0.131 0.187795 0.0945 " rpy="0. 0. 1.5707964"/>
+    <parent link="World"/>
+    <child link="front_left_wheel_link"/>
+    <axis xyz="1. 0. 0."/>
+  </joint>
+  <joint name="front_right_wheel_joint" type="continuous">
+    <origin xyz="0.131 -0.187795 0.0945 " rpy="0. 0. 1.5707964"/>
+    <parent link="World"/>
+    <child link="front_right_wheel_link"/>
+    <axis xyz="1. 0. 0."/>
+  </joint>
+  <joint name="joint_World-imu_sensor" type="fixed">
+    <origin xyz="0.012 0.002 0.127" rpy="0. 0. 0."/>
+    <parent link="World"/>
+    <child link="imu_sensor"/>
+  </joint>
+  <joint name="rear_left_wheel_joint" type="continuous">
+    <origin xyz="-0.131 0.187795 0.0945 " rpy="0. 0. 1.5707964"/>
+    <parent link="World"/>
+    <child link="rear_left_wheel_link"/>
+    <axis xyz="1. 0. 0."/>
+  </joint>
+  <joint name="rear_right_wheel_joint" type="continuous">
+    <origin xyz="-0.131 -0.187795 0.0945 " rpy="0. 0. 1.5707964"/>
+    <parent link="World"/>
+    <child link="rear_right_wheel_link"/>
+    <axis xyz="1. 0. 0."/>
+  </joint>
+  <link name="World">
+    <visual>
+      <origin xyz="2. 2. 0.1" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/blue_block_Cube.obj" scale="0.075 0.075 0.075"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="-2. 2. 0.1" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/green_block_Cube.obj" scale="0.075 0.075 0.075"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="-1.7158464 -2.0010953 0.0436631" rpy="1.5707965 0. -3.1415918"/>
+      <geometry>
+        <mesh filename="meshes/FOF_Mesh_Label_1.obj" scale="0.0141693 0.0167072 0.0157485"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="-2.022915 -2.4393725 0.3061002" rpy="1.7978897 0.0094443 1.5906025"/>
+      <geometry>
+        <mesh filename="meshes/FOF_Mesh_Label_6_Small.obj" scale="0.0126918 0.0134162 0.0129945"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="-2. -2. 0.0014402" rpy="1.5707965 0. 0. "/>
+      <geometry>
+        <mesh filename="meshes/FOF_Mesh_Magenta_Box.obj" scale="0.02976 0.03219 0.02976"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="2. -2. 0.1" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/red_block_Cube.obj" scale="0.075 0.075 0.075"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. -0.0055" rpy="1.5707964 -0. 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/mesh_0.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0.06" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/mesh_1.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.12 0. 0.244" rpy="1.5707 -0. 1.5707"/>
+      <geometry>
+        <mesh filename="meshes/mesh_2.obj" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.222 0. 0.252" rpy="0. 0. 1.5707"/>
+      <geometry>
+        <mesh filename="meshes/mesh_3.obj" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.12 0. 0.244" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/mesh_5.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.12 0. 0.393" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/mesh_6.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="-0.18 0.126 0.2495" rpy="0. 0. 0."/>
+      <geometry>
+        <cylinder radius="0.026" length="0.016"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0.06" rpy="0. 0. -3.1415925"/>
+      <geometry>
+        <mesh filename="meshes/mesh_8.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0.152" rpy="0. 0. 0."/>
+      <geometry>
+        <box size="0.42 0.31 0.184"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.12 0. 0.343" rpy="0. 0. 0."/>
+      <geometry>
+        <box size="0.105 0.1 0.1 "/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="2. 2. 0.1" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/blue_block_Cube.obj" scale="0.075 0.075 0.075"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-2. 2. 0.1" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/green_block_Cube.obj" scale="0.075 0.075 0.075"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-2. -2.427692 0.2390334" rpy="0. 0. 0."/>
+      <geometry>
+        <box size="0.54 0.03 0.405069"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-2. -1.57232 0.2390334" rpy="0. 0. 0."/>
+      <geometry>
+        <box size="0.54 0.03 0.405069"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-2.2775 -2. 0.2390334" rpy="0. 0. 0."/>
+      <geometry>
+        <box size="0.03 0.888 0.405069"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-2. -2. 0.0047484" rpy="0. 0. 0."/>
+      <geometry>
+        <box size="0.507 0.78 0.0075"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-1.7225 -2. 0.2390334" rpy="0. 0. 0."/>
+      <geometry>
+        <box size="0.03 0.888 0.405069"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-2. -2.395806 0.1950114" rpy="0. 0. 0."/>
+      <geometry>
+        <box size="0.5069913 0.03 0.38628 "/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-2. -1.604674 0.1949748" rpy="0. 0. 0."/>
+      <geometry>
+        <box size="0.5069913 0.03 0.38628 "/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-2.245036 -2. 0.0216152" rpy="0. 0. 0."/>
+      <geometry>
+        <box size="0.03 0.821376 0.03219 "/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-1.7550635 -2. 0.0216152" rpy="0. 0. 0."/>
+      <geometry>
+        <box size="0.03 0.821376 0.03219 "/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="2. -2. 0.1" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/red_block_Cube.obj" scale="0.075 0.075 0.075"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0. 0. 0.152" rpy="0. 0. 0."/>
+      <geometry>
+        <box size="0.42 0.31 0.184"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.12 0. 0.343" rpy="0. 0. 0."/>
+      <geometry>
+        <box size="0.105 0.1 0.1 "/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="front_left_wheel_link">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.477"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="1.5707964 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/front_left_wheel_link_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="1.5707964 0. -1.5707964"/>
+      <geometry>
+        <cylinder radius="0.098" length="0.04"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="1.5707964 0. -1.5707964"/>
+      <geometry>
+        <cylinder radius="0.098" length="0.04"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="front_right_wheel_link">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.477"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="1.5707964 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/front_right_wheel_link_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="1.5707964 0. -1.5707964"/>
+      <geometry>
+        <cylinder radius="0.098" length="0.04"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="1.5707964 0. -1.5707964"/>
+      <geometry>
+        <cylinder radius="0.098" length="0.04"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="imu_sensor"/>
+  <link name="rear_left_wheel_link">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.477"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="1.5707964 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/rear_left_wheel_link_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="1.5707964 0. -1.5707964"/>
+      <geometry>
+        <cylinder radius="0.098" length="0.04"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="1.5707964 0. -1.5707964"/>
+      <geometry>
+        <cylinder radius="0.098" length="0.04"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rear_right_wheel_link">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.477"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="1.5707964 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/rear_right_wheel_link_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="1.5707964 0. -1.5707964"/>
+      <geometry>
+        <cylinder radius="0.098" length="0.04"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="1.5707964 0. -1.5707964"/>
+      <geometry>
+        <cylinder radius="0.098" length="0.04"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>
