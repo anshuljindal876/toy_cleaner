@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panda">
+
+  <!-- Empty link to referr everything to -->
+  <link name="world" />
+  <!-- Include arm and hand xacro files-->
+  <xacro:include filename="$(find vbm_project_env)/description/panda_arm.xacro" />
+  <xacro:include filename="$(find vbm_project_env)/description/panda_hand.xacro" />
+  <xacro:include filename="$(find vbm_project_env)/description/camera.xacro" />
+
+  <!-- call the arm macro-->
+  <xacro:panda_arm />
+  <!-- call the hand macro-->
+  <xacro:panda_hand ns="panda" rpy="0 0 ${-pi/4}" connected_to="panda_link8" />
+  <xacro:camera parent_link="panda_link8"/>
+  
+  <xacro:include filename="$(find vbm_project_env)/description/manipulator.gazebo.xacro" />
+  <xacro:include filename="$(find vbm_project_env)/description/manipulator.control.xacro" />
+</robot>
