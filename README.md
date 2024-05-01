@@ -58,7 +58,7 @@ Please take a look at the system diagram below:
 
 The following is a more detailed look at the blocks of the system:
 
-1. **Vision and PointCloud**
+1. ### Vision and PointCloud
   The point cloud is generated from the stereo camera (Intel RealSense) and contains points corresponding to the whole environment. It is then transformed from the camera to the world frame, and the floor is removed using RANSAC-based plane fitting. Subsequently, we cluster the remaining point clouds using DBSCAN and isolate the different objects in the room. The RGB image then uses color keying to find which object is the red cone, and we project the point cloud back to the image frame and match it to the RGB image. Thus, the appropriate point cloud is selected. We find the centroid of the point cloud and set a point near it as the target.
 
 2. ### Differential Drive System
@@ -93,7 +93,7 @@ The differential drive system of the robot is managed through an action graph in
   - This setup ensures that the robot responds dynamically to control commands, adjusting its speed and direction in real-time based on the navigation inputs from the ROS environment.
 
 
-3. **MoveIt2**
+3. ### MoveIt2
   We use MoveIt2 to send position commands to the IsaacSim controller via the `/joint_states` topic. First, we perform inverse kinematics for the pose we wish to attain and then plan a path to that point. Once this path is executed, the simulator follows it.
 
   To run MoveIt2:
