@@ -9,6 +9,8 @@ You can find the presentation for this project [here](https://github.com/anshulj
 See the image below for a PARI breakdown of the project:
 ![PARI Breakdown](https://github.com/anshuljindal876/toy_cleaner/blob/readme_updating/readme_utils/Screenshot%20from%202024-05-01%2012-32-49.png)
 
+[Source for survey](https://swnsdigital.com/us/2017/06/parents-have-to-pick-up-after-their-kids-1500-times-a-year/)
+
 ## Dependencies
 
 The simulation has been built and implemented in Nvidia Omniverse's IsaacSim, which is quickly becoming the industry standard for robot simulation.
