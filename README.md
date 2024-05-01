@@ -61,8 +61,37 @@ The following is a more detailed look at the blocks of the system:
 1. **Vision and PointCloud**
   The point cloud is generated from the stereo camera (Intel RealSense) and contains points corresponding to the whole environment. It is then transformed from the camera to the world frame, and the floor is removed using RANSAC-based plane fitting. Subsequently, we cluster the remaining point clouds using DBSCAN and isolate the different objects in the room. The RGB image then uses color keying to find which object is the red cone, and we project the point cloud back to the image frame and match it to the RGB image. Thus, the appropriate point cloud is selected. We find the centroid of the point cloud and set a point near it as the target.
 
-2. **Differential Drive**
-  **(ANSHUL ADD THE DIFF DRIVE STUFF)**
+2. ### Differential Drive System
+
+The differential drive system of the robot is managed through an action graph in Nvidia Isaac Sim, utilizing both the Articulation Controller and the Differential Drive block within the platform's visual scripting environment. This system is designed to effectively translate ROS 2 Twist messages into actionable commands for the robot's movement.
+
+#### Action Graph Setup
+
+1. **Articulation Controller**:
+   - The Articulation Controller is a component in Isaac Sim that manages the articulated systems of the robot. In the context of the differential drive, it controls the physical properties such as wheel rotation and robot chassis articulation, ensuring smooth and responsive movement based on the received commands.
+
+2. **Differential Drive Block**:
+   - The Differential Drive block is specifically designed for robots with two independently driven wheels arranged on either side of the vehicle. This block calculates the necessary wheel speeds and directions from the linear and angular velocities provided by the Twist messages. It simplifies the process of translating these velocities into actual rotational speeds for the wheels, considering the robot's wheelbase and other physical characteristics.
+
+#### Integration with ROS 2
+
+- **Subscribing to Twist Messages**:
+  - The action graph subscribes to the Twist message type, commonly used in ROS to specify both linear and angular velocities. These messages are typically published by various navigation and control nodes within the ROS ecosystem, directing the robot's movement.
+  - Linear velocity (twist.linear.x) controls the forward or backward speed of the robot, while angular velocity (twist.angular.z) dictates the turning rate around the vertical axis.
+
+#### Visual Scripting
+
+- **Node Configuration**:
+  - In the visual scripting environment, nodes representing the Twist message subscription, articulation controller, and differential drive are interconnected to form the action graph.
+  - The Twist message node captures the incoming ROS messages and feeds them into the Differential Drive block, which processes these inputs to compute the required motor commands.
+  - The output of the Differential Drive block is then linked to the Articulation Controller, which executes the wheel movements.
+
+#### Execution
+
+- **Running the Differential Drive**:
+  - Once the action graph is activated, Isaac Sim listens for incoming Twist messages. Upon receipt, the messages are immediately processed, and the corresponding motor commands are issued.
+  - This setup ensures that the robot responds dynamically to control commands, adjusting its speed and direction in real-time based on the navigation inputs from the ROS environment.
+
 
 3. **MoveIt2**
   We use MoveIt2 to send position commands to the IsaacSim controller via the `/joint_states` topic. First, we perform inverse kinematics for the pose we wish to attain and then plan a path to that point. Once this path is executed, the simulator follows it.
@@ -74,7 +103,12 @@ The following is a more detailed look at the blocks of the system:
 
 ## Running the Simulation
 
-To run the simulation, follow these steps:
+First run MoveIt2 and rviz:
+  ```
+  ros2 run panda_moveit_config demo.launch.py
+```
+
+To run the IsaacSim, follow these steps:
 
 1. **Start Nvidia Isaac Sim:**
    - Launch Nvidia Isaac Sim.
