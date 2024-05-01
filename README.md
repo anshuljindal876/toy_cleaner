@@ -6,7 +6,7 @@ This is the repo for the Toy Cleaning team in WPI's RBE594 - Capstone Experience
 
 You can find the presentation for this project [here](https://github.com/anshuljindal876/toy_cleaner/tree/readme_updating/Presentation) and the demonstration [here](https://youtu.be/KUQGUB5UZtM?si=NhdE4qspo7lZLT3j).
 
-See the image below for a PARI breakdown of the problem:
+See the image below for a PARI breakdown of the project:
 ![PARI Breakdown](https://github.com/anshuljindal876/toy_cleaner/blob/readme_updating/readme_utils/Screenshot%20from%202024-05-01%2012-32-49.png)
 
 ## Dependencies
