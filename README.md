@@ -68,6 +68,8 @@ The following is a more detailed look at the blocks of the system:
   We use MoveIt2 to send position commands to the IsaacSim controller via the `/joint_states` topic. First, we perform inverse kinematics for the pose we wish to attain and then plan a path to that point. Once this path is executed, the simulator follows it.
 
   To run MoveIt2:
-```ros2 run panda_moveit_config demo.launch.py```
+  ```
+  ros2 run panda_moveit_config demo.launch.py
+```
 
 **(ANSHUL ADD THE Sim stuff)**
