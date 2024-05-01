@@ -96,11 +96,6 @@ The differential drive system of the robot is managed through an action graph in
 3. ### MoveIt2
   We use MoveIt2 to send position commands to the IsaacSim controller via the `/joint_states` topic. First, we perform inverse kinematics for the pose we wish to attain and then plan a path to that point. Once this path is executed, the simulator follows it.
 
-  To run MoveIt2:
-  ```
-  ros2 run panda_moveit_config demo.launch.py
-```
-
 ## Running the Simulation
 
 First run MoveIt2 and rviz:
