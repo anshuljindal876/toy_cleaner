@@ -91,3 +91,10 @@ To run the simulation, follow these steps:
      ```
    This command initializes the entire task pipeline, causing the robot to execute the defined behaviors repeatedly as it performs the tasks.
 
+   ## Authors
+
+- Anshul Jindal
+- Evan Arenburg
+- Tanish Mishra
+
+
