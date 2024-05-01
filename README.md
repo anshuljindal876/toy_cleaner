@@ -72,4 +72,22 @@ The following is a more detailed look at the blocks of the system:
   ros2 run panda_moveit_config demo.launch.py
 ```
 
-**(ANSHUL ADD THE Sim stuff)**
+## Running the Simulation
+
+To run the simulation, follow these steps:
+
+1. **Start Nvidia Isaac Sim:**
+   - Launch Nvidia Isaac Sim.
+   - Navigate to and open the simulation scene located in the `usd` folder of this repository.
+
+2. **Play the Simulation:**
+   - Within Isaac Sim, press the 'Play' button to initiate the simulation environment.
+
+3. **Run the ROS 2 Package:**
+   - Open a new terminal.
+   - Execute the following command to start the robot's task pipeline:
+     ```bash
+     ros2 run toy_cleaner main.py
+     ```
+   This command initializes the entire task pipeline, causing the robot to execute the defined behaviors repeatedly as it performs the tasks.
+
