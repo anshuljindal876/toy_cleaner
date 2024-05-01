@@ -9,4 +9,4 @@ Then,
 ros2 launch capstone_vision camera_reading_demo.launch.py 
 
 This was made with ROS 2 Humble on Ubuntu 22.04.4 LTS.
-OpenCV will need to be installed in order to run.
+OpenCV will need to be installed in order to run the demo.
