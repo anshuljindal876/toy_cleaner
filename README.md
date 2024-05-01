@@ -1,3 +1,5 @@
+The packages for the vision demo can be found in vision/src on this branch.
+Those packages are the only ones on this branch that are needed for the vision demo.
 To run the vision demo as seen in the presentation slides, use the following:
 
 First,
